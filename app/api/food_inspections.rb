@@ -38,7 +38,7 @@ class FoodInspections
     ne_coord = mapview.convertPoint ne_point, toCoordinateFromView:mapview
     sw_coord = mapview.convertPoint sw_point, toCoordinateFromView:mapview
     
-    url = "firms/bbox/#{ne_coord.latitude},#{sw_coord.longitude},#{sw_coord.longitude},#{ne_coord.longitude}"
+    url = "firms/bbox/#{ne_coord.latitude},#{sw_coord.longitude},#{sw_coord.latitude},#{ne_coord.longitude}"
     
     @client.get(url) do |result|
       if result.success?
