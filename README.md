@@ -6,4 +6,4 @@ API provided by [Nebraska Food Inspections](http://foodinspections.opennebraska.
 
 Credits
 -------
-Tab bar icons by [PixelLove](http://www.pixellove.com) ([License](http://www.pixellove.com/free-license)).
+Tab bar icons by [PixelLove](http://www.pixellove.com) ([license](http://www.pixellove.com/free-license)).
