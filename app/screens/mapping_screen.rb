@@ -4,6 +4,7 @@ class MappingScreen < PM::MapScreen
   
   def on_init
     set_tab_bar_item item: 'Map_Path.png', title: 'Map'
+    show_user_location
   end
   
   def on_appear
@@ -30,5 +31,22 @@ class MappingScreen < PM::MapScreen
 
   def annotation_data
     []
+  end
+  
+  def on_user_location(location)
+    zoom_to_user
+    get_new_annotations
+  end
+  
+  def mapView(view, regionDidChangeAnimated:animated)
+    get_new_annotations
+  end
+  
+  def mapView(view, didFailToLocateUserWithError:error)
+    position = CLLocationCoordinate2D.new
+    position.latitude = 40.83
+    position.longitude = -96.66
+    
+    center = position
   end
 end
