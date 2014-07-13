@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-# BubbleWrap
-gem 'bubble-wrap', :require => 'bubble-wrap'
-
 # Screens
 gem 'ProMotion'
 gem 'ProMotion-map'
