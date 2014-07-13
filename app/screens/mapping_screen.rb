@@ -11,21 +11,21 @@ class MappingScreen < PM::MapScreen
   end
   
   def get_new_annotations
-    fi = FoodInspections.new
-    fi.in_view(mapview) do |result|
-      result.each do |firm|
-        ann = {
-          :longitude => firm['lng'].to_f,
-          :latitude => firm['lat'].to_f,
-          :title => firm['name'],
-          :subtitle => "Critical: #{firm['total_critical'].to_s}, Noncritical: #{firm['total_noncritical'].to_s}",
-          :image => UIImage.imageNamed('yellow-small')
-        }
-        add_annotation ann
-      end
+    annotations = Array.new
+    clear_annotations
+    
+    FIFirm.loadWithinMapView(mapview).each do |firm|
+      annotation = {
+        :title => firm.name,
+        :subtitle => "Critical: #{firm.totalCritical.to_s}, Noncritical: #{firm.totalNoncritical.to_s}",
+        :latitude => firm.coordinate.latitude,
+        :longitude => firm.coordinate.longitude,
+        :image => UIImage.imageNamed('yellow-small')
+      }
+      annotations << annotation
     end
-
-    update_annotation_data
+    
+    add_annotations annotations
   end
 
   def annotation_data

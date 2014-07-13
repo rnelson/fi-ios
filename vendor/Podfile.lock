@@ -20,11 +20,18 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FoodInspections (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.3.1)
+  - FoodInspections (from `https://github.com/rnelson/libfi-objc.git`)
+
+EXTERNAL SOURCES:
+  FoodInspections:
+    :git: https://github.com/rnelson/libfi-objc.git
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  FoodInspections: c5c4f155d315700594eb7eeb88692c18712e260a
 
 COCOAPODS: 0.33.1
